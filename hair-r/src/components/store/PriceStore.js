@@ -2,9 +2,9 @@ import { create } from 'zustand';
 import axiosInstance from './axiosInstance';
 const usePriceStore = create((set) => ({
   curPrice: 0 ,
-  count: 0,
+  count: 4,
   progress: 0,
-  stage: 0,
+  stage: 1,
   // Action to set user data
   setUser: (user) => set({ user }),
   
