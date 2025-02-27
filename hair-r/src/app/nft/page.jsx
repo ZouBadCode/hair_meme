@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect } from 'react';
 import NavThing from "@/components/navThing";
 import NftFrame from '../../components/nftFrame';

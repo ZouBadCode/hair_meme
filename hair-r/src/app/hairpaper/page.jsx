@@ -3,10 +3,10 @@
 import React, { useState } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { Sparkles, Crown, Gift, Coins, Laugh, PartyPopper, Rocket, Brain } from 'lucide-react';
+import NavThing from "@/components/navThing";
+
 
 const HairPaper = () => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [clickCount, setClickCount] = useState(0);
 
   const tokenDistribution = [
     { name: 'Public Sale', value: 50, color: '#FF6B6B' },
@@ -16,32 +16,20 @@ const HairPaper = () => {
     { name: 'Event', value: 5, color: '#FFEEAD' }
   ];
 
-  const handleHairClick = () => {
-    setClickCount(prev => prev + 1);
-  };
 
   return (
+    
     <div className="min-h-screen bg-gradient-to-b from-purple-900 via-pink-900 to-red-900 text-white p-8">
+      <NavThing />
       {/* Fun Header Section */}
-      <div 
-        className="text-center mb-16 transform hover:scale-105 transition-transform cursor-pointer"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onClick={handleHairClick}
-      >
+      <div className="mt-10 text-center mb-16 transform hover:scale-105 transition-transform cursor-pointer">
         <div className="relative">
           <h1 className="text-6xl font-bold mb-4 animate-bounce">
             🦁 $HAIR PAPER 秀髮企劃書 👨‍🦲
           </h1>
-          {isHovered && (
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full">
-              <span className="text-2xl">{"⬇️ 點我點我！"}</span>
-            </div>
-          )}
         </div>
         <p className="text-xl text-yellow-300 animate-pulse">
           拯救你的秀髮！告別禿頭！ NO MORE BALDNESS! 
-          {clickCount > 0 && ` (你已經點擊了 ${clickCount} 次！)`}
         </p>
         <div className="text-3xl mt-4">
           {"🧔 → 👨‍🦲 → 💆‍♂️ → 🦁"}
