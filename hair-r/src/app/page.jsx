@@ -8,33 +8,63 @@ import { useEffect, useState } from "react";
 
 export default function Land() {
   const [isLoading, setIsLoading] = useState(true);
-
+  const [progress, setProgress] = useState(0);
+  
   useEffect(() => {
-    // 簡單的載入動畫
+    // 使用漸進式進度條來創造更順暢的體驗
+    const interval = setInterval(() => {
+      setProgress(prevProgress => {
+        // 緩慢增加到90%，最後一步完成時直接到100%
+        if (prevProgress < 90) {
+          return prevProgress + (Math.random() * 4);
+        }
+        return prevProgress;
+      });
+    }, 100);
+    
+    // 模擬載入完成
     const timer = setTimeout(() => {
-      setIsLoading(false);
+      setProgress(100);
+      setTimeout(() => setIsLoading(false), 200); // 短暫延遲確保過渡動畫完成
     }, 1500);
-    return () => clearTimeout(timer);
+    
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timer);
+    };
   }, []);
-
+  
   if (isLoading) {
     return (
       <div className="flex items-center justify-center h-screen bg-gradient-to-r from-purple-900 to-pink-500">
         <div className="text-center">
-          <img 
-            src="/assets/hair.png" 
-            alt="$HAIR Logo" 
-            className="w-32 h-32 mx-auto animate-bounce mb-8" 
-          />
-          <h1 className="text-4xl font-bold text-white">Loading your $HAIR...</h1>
-          <div className="mt-6 w-64 h-4 bg-gray-200 rounded-full overflow-hidden mx-auto">
-            <div className="h-full bg-gradient-to-r from-yellow-300 via-pink-500 to-purple-600 animate-pulse" style={{width: '70%'}}></div>
+          <div className="relative w-32 h-32 mx-auto mb-8">
+            <img
+              src="/assets/hair.png"
+              alt="$HAIR Logo"
+              className="w-32 h-32 absolute top-0 left-0 animate-pulse"
+            />
+            <div className="absolute inset-0 bg-pink-500 rounded-full opacity-20 animate-ping"></div>
           </div>
+          
+          <h1 className="text-4xl font-bold text-white transition-all duration-300 ease-in-out">
+            Loading your $HAIR...
+          </h1>
+          
+          <div className="mt-6 w-64 h-4 bg-gray-800 bg-opacity-40 rounded-full overflow-hidden mx-auto backdrop-blur-sm border border-pink-300 border-opacity-30">
+            <div 
+              className="h-full bg-gradient-to-r from-yellow-300 via-pink-500 to-purple-600 transition-all duration-300 ease-out"
+              style={{width: `${progress}%`}}
+            />
+          </div>
+          
+          <p className="text-white mt-2 text-sm opacity-70 font-mono">
+            {Math.floor(progress)}%
+          </p>
         </div>
       </div>
     );
   }
-
   return (
     <div className="min-h-screen overflow-hidden">
       {/* 新的NavBar */}

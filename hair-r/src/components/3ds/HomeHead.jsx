@@ -43,7 +43,7 @@ function Scene() {
 
 export default function ThreeDScene() {
     return (
-        <Canvas style={{ background: '#82DBC5', width: '100vw', height: '60vh' }}>
+        <Canvas style={{ background: '#82DBC5', width: '100vw', height: '100vh' }}>
             <Scene />
         </Canvas>
     )
