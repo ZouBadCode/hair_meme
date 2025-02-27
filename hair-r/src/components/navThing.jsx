@@ -1,26 +1,75 @@
-import React from 'react';
-import ConnetWalletBtn from './connetWalletBTN'
-const navItems = [
-    { href: "/", text: "$HAIR" },
-    { href: "/nft", text: "NFT" },
-    { href: "/hairpaper", text: "Hair Paper" },
-];
+"use client";
+import React, { useState, useEffect } from 'react';
+import ConnetWalletBtn from './connetWalletBTN';
+import Link from 'next/link';
 
 const NavThing = () => {
-    return (
-        <nav className="bg-transparent p-2 z-10 flex flex-row items-center justify-between">
-            <ul className="list-none flex gap-5 mx-8">
-                {navItems.map((item, index) => (
-                    <li key={index} className="nav-item">
-                        <a href={item.href} className="no-underline text-black font-bold hover:text-gray-500">
-                            {item.text}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-            <ConnetWalletBtn className="p-4" />
-        </nav>
-    );
+  const [isScrolled, setIsScrolled] = useState(false);
+  
+  // 檢測滾動以更改navbar樣式
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = [
+    { href: "/", text: "$HAIR", emoji: "🦁" },
+    { href: "/nft", text: "NFT", emoji: "👑" },
+    { href: "/hairpaper", text: "Hair Paper", emoji: "📜" },
+  ];
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-purple-900 bg-opacity-90 shadow-lg' : 'bg-transparent'
+    } py-4 px-6`}>
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Logo區域 */}
+        <div className="flex items-center space-x-2">
+          <img 
+            src="/assets/hair.png" 
+            alt="$HAIR Logo" 
+            className="w-10 h-10 animate-bounce" 
+          />
+          <span className="text-2xl font-bold bg-gradient-to-r from-yellow-300 to-pink-500 text-transparent bg-clip-text">
+            $HAIR
+          </span>
+        </div>
+
+        {/* 導航連結 */}
+        <ul className="hidden md:flex items-center space-x-8">
+          {navItems.map((item, index) => (
+            <li key={index} className="group">
+              <Link href={item.href}>
+                <span className="flex items-center space-x-1 text-white font-bold hover:text-yellow-300 transition-colors duration-300">
+                  <span>{item.emoji}</span>
+                  <span className="border-b-2 border-transparent group-hover:border-yellow-300 pb-1">
+                    {item.text}
+                  </span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* 連接錢包按鈕 */}
+        <div className="relative group">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-300"></div>
+          <div className="relative">
+            <ConnetWalletBtn />
+          </div>
+        </div>
+
+        {/* 移動端菜單按鈕 */}
+        <button className="md:hidden text-white text-2xl">
+          ☰
+        </button>
+      </div>
+    </nav>
+  );
 };
 
 export default NavThing;
