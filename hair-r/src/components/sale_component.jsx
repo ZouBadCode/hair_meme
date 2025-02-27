@@ -40,7 +40,7 @@ const HairGrowthApp = () => {
   const [currency, setCurrency] = useState("sui");
 
   return (
-    <div className="max-w-md mx-auto bg-gradient-to-b from-purple-100 to-pink-100 rounded-3xl shadow-lg p-8 space-y-4 border-4 border-purple-300">
+    <div className="max-w-md mx-16 bg-gradient-to-b from-purple-100 to-pink-100 rounded-3xl shadow-lg p-8 space-y-4 border-4 border-purple-300">
       <div className="flex items-center justify-center space-x-2">
         <h1 className="text-3xl font-bold text-center text-purple-600 animate-bounce">
           Grow Some $HAIR
@@ -70,12 +70,13 @@ const HairGrowthApp = () => {
       </div>
 
       {/* Countdown */}
-      <div className="flex justify-center space-x-4">
+      <div className="flex justify-center space-x-4 items-center">
         <div
           className="w-12 h-12 bg-white border-2 border-purple-400 rounded-lg flex items-center justify-center text-lg font-bold text-purple-600 shadow-md transform hover:scale-110 transition-transform"
         >
-          {countdown}
+          {countdown[0]}
         </div>
+        <p className="text-slate-800">of {countdown[1]} STAGES OF HAIR GROWING!</p>
       </div>
 
       {/* Percentage Bar */}

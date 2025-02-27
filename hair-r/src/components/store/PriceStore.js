@@ -4,7 +4,7 @@ const usePriceStore = create((set) => ({
   curPrice: 0 ,
   count: 4,
   progress: 0,
-  stage: 1,
+  stage: [1,4],
   // Action to set user data
   setUser: (user) => set({ user }),
   

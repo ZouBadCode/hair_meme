@@ -31,10 +31,10 @@ function SpinningModel(props) {
 function Scene() {
     return (
         <>
-            <PerspectiveCamera makeDefault position={[3, 3, 3]} />
+            <PerspectiveCamera makeDefault position={[1, 1, 1]} />
             <ambientLight intensity={1} />
             <directionalLight position={[1, 1, 1]} intensity={0.5} />
-            <Bounds fit clip observe margin={3}>
+            <Bounds fit clip observe margin={1.5}>
                 <SpinningModel />
             </Bounds>
         </>
@@ -43,7 +43,7 @@ function Scene() {
 
 export default function ThreeDScene() {
     return (
-        <Canvas style={{ background: '#82DBC5', width: '100vw', height: '100vh' }}>
+        <Canvas style={{ background: '#82DBC5', width: '100vw', height: '60vh' }}>
             <Scene />
         </Canvas>
     )
