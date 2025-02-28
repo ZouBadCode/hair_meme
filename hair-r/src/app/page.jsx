@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 export default function Land() {
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
-  
   useEffect(() => {
     // 使用漸進式進度條來創造更順暢的體驗
     const interval = setInterval(() => {
@@ -190,5 +189,8 @@ export default function Land() {
         </p>
       </div>
     </div>
+    
   );
 }
+
+
