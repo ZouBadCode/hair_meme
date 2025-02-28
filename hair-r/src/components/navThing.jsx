@@ -2,9 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import ConnetWalletBtn from './connetWalletBTN';
 import Link from 'next/link';
+import ThemeToggle from './ThemeToggle';
+import { useTheme } from './ThemeContext';
 
 const NavThing = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme } = useTheme();
   
   // 檢測滾動以更改navbar樣式
   useEffect(() => {
@@ -24,7 +27,11 @@ const NavThing = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-purple-900 bg-opacity-90 shadow-lg' : 'bg-transparent'
+      isScrolled 
+        ? theme === 'dark' 
+          ? 'bg-gray-900 bg-opacity-90 shadow-lg' 
+          : 'bg-purple-900 bg-opacity-90 shadow-lg'
+        : 'bg-transparent'
     } py-4 px-6`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo區域 */}
@@ -55,11 +62,19 @@ const NavThing = () => {
           ))}
         </ul>
 
-        {/* 連接錢包按鈕 */}
-        <div className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-300"></div>
-          <div className="relative">
-            <ConnetWalletBtn />
+        {/* 工具按鈕區域 */}
+        <div className="flex items-center space-x-4">
+          {/* 主題切換按鈕 */}
+          <div className="relative group">
+            <ThemeToggle />
+          </div>
+
+          {/* 連接錢包按鈕 */}
+          <div className="relative group">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-300"></div>
+            <div className="relative">
+              <ConnetWalletBtn />
+            </div>
           </div>
         </div>
 

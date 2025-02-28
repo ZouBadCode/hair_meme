@@ -7,6 +7,8 @@ import React from "react";
 import { Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import "@mysten/dapp-kit/dist/index.css";
+import { ThemeProvider } from "../components/ThemeContext";
+
 // 配置你要連接的網路
 const { networkConfig } = createNetworkConfig({
   localnet: { url: getFullnodeUrl("localnet") },
@@ -17,15 +19,16 @@ const queryClient = new QueryClient();
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <Theme appearance="dark">
-      <QueryClientProvider client={queryClient}>
-        <SuiClientProvider networks={networkConfig} defaultNetwork="localnet">
-          <WalletProvider>
-            {children}
-          </WalletProvider>
-        </SuiClientProvider>
-      </QueryClientProvider>
-    </Theme>
-
+    <ThemeProvider>
+      <Theme appearance="dark">
+        <QueryClientProvider client={queryClient}>
+          <SuiClientProvider networks={networkConfig} defaultNetwork="localnet">
+            <WalletProvider>
+              {children}
+            </WalletProvider>
+          </SuiClientProvider>
+        </QueryClientProvider>
+      </Theme>
+    </ThemeProvider>
   );
 }
