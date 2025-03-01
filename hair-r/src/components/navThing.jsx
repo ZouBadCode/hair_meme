@@ -51,7 +51,7 @@ const NavThing = () => {
           {navItems.map((item, index) => (
             <li key={index} className="group">
               <Link href={item.href}>
-                <span className="flex items-center space-x-1 text-white font-bold hover:text-yellow-300 transition-colors duration-300">
+                <span className="flex items-center space-x-1 text-white dark:text-white font-bold hover:text-yellow-300 dark:hover:text-yellow-300 transition-colors duration-300">
                   <span>{item.emoji}</span>
                   <span className="border-b-2 border-transparent group-hover:border-yellow-300 pb-1">
                     {item.text}
@@ -79,7 +79,7 @@ const NavThing = () => {
         </div>
 
         {/* 移動端菜單按鈕 */}
-        <button className="md:hidden text-white text-2xl">
+        <button className="md:hidden text-white dark:text-white text-2xl">
           ☰
         </button>
       </div>
