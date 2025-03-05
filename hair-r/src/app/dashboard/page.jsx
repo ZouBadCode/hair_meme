@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import NavThing from "@/components/navThing";
+import Footer from "@/components/Footer"; // 引入頁尾組件
 import "../../app/glowAnimation.css";
 import { Sparkles, Wallet, ChevronDown, ChevronUp, Coins, PiggyBank } from 'lucide-react';
 import usePriceStore from '@/components/store/PriceStore';
@@ -380,6 +381,9 @@ const DashboardPage = () => {
                     </div>
                 </div>
             </div>
+            
+            {/* 添加頁尾 */}
+            <Footer />
         </div>
     );
 };

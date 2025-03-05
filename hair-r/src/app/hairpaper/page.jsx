@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { Sparkles, Crown, Gift, Coins, Laugh, PartyPopper, Rocket, Brain } from 'lucide-react';
 import NavThing from "@/components/navThing";
-
+import Footer from "@/components/Footer"; // 引入頁尾組件
 
 const HairPaper = () => {
 
@@ -168,10 +168,8 @@ const HairPaper = () => {
         </div>
       </div>
 
-      {/* Footer Meme */}
-      <div className="text-center text-2xl animate-bounce">
-        💪 Together Strong! 一起對抗掉髮！ 💪
-      </div>
+      {/* 添加頁尾替代原始的簡單頁尾 */}
+      <Footer />
     </div>
   );
 };

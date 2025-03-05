@@ -3,6 +3,8 @@ import NavThing from "@/components/navThing";
 import HairGrowthApp from "../components/sale_component";
 import IntroHome from "../components/introHome";
 import HomeHead from "../components/3ds/HomeHead";
+import Footer from "@/components/Footer"; // 引入頁尾組件
+import ScrollingNews from "@/components/ScrollingNews"; // 引入滾動快訊組件
 import "./glowAnimation.css";
 import { useEffect, useState } from "react";
 
@@ -69,8 +71,13 @@ export default function Land() {
       {/* 新的NavBar */}
       <NavThing />
       
+
       {/* Hero部分 */}
       <div className="flex flex-col md:flex-row items-center justify-center min-h-screen pt-20 relative">
+      {/* 滾動快訊報導 */}
+      <div className="absolute z-20 pt-4 top-20">
+        <ScrollingNews />
+      </div>
         {/* 3D頭部作為背景，但添加一些過濾效果使其更融合 */}
         <div className="absolute inset-0 z-0 opacity-70">
           <HomeHead />
@@ -177,20 +184,8 @@ export default function Land() {
         </div>
       </div>
       
-      {/* 原IntroHome組件將其融入上面的設計中 */}
-      
-      {/* 底部口號 */}
-      <div className="text-center py-12 bg-gradient-to-r from-purple-900 to-pink-600 text-white">
-        <h2 className="text-4xl font-bold mb-4 wiggle">
-          💪 Together Strong! 一起對抗掉髮！ 💪
-        </h2>
-        <p className="text-xl max-w-2xl mx-auto">
-          每買入一個$HAIR代幣，就是為禿頭革命貢獻一份力量！
-        </p>
-      </div>
+      {/* 使用新的頁尾組件替代原始的簡單頁尾 */}
+      <Footer />
     </div>
-    
   );
 }
-
-

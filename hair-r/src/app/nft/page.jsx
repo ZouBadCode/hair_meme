@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import NavThing from "@/components/navThing";
+import Footer from "@/components/Footer"; // 引入頁尾組件
 import NftFrame from '../../components/nftFrame';
 import "../glowAnimation.css";
 
@@ -212,6 +213,9 @@ const NftPage = () => {
                     </div>
                 </div>
             </div>
+            
+            {/* 添加頁尾 */}
+            <Footer />
         </div>
     );
 };
