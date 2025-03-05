@@ -7,7 +7,9 @@ import { useTheme } from './ThemeContext';
 
 const NavThing = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { theme } = useTheme();
+  // 添加錯誤處理，當 useTheme 不可用時使用默認值
+  const themeContext = useTheme();
+  const theme = themeContext?.theme || 'light';
   
   // 檢測滾動以更改navbar樣式
   useEffect(() => {
@@ -23,6 +25,7 @@ const NavThing = () => {
     { href: "/", text: "$HAIR", emoji: "🦁" },
     { href: "/nft", text: "NFT", emoji: "👑" },
     { href: "/hairpaper", text: "Hair Paper", emoji: "📜" },
+    { href: "/dashboard", text: "儀表板", emoji: "📊" },
   ];
 
   return (
@@ -66,7 +69,7 @@ const NavThing = () => {
         <div className="flex items-center space-x-4">
           {/* 主題切換按鈕 */}
           <div className="relative group">
-            <ThemeToggle />
+            {themeContext ? <ThemeToggle /> : null}
           </div>
 
           {/* 連接錢包按鈕 */}

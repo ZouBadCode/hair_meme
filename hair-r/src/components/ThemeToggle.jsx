@@ -4,7 +4,14 @@ import React from 'react';
 import { useTheme } from './ThemeContext';
 
 const ThemeToggle = () => {
-  const { theme, toggleTheme } = useTheme();
+  const themeContext = useTheme();
+  
+  // 如果 ThemeContext 不可用，顯示一個空元素
+  if (!themeContext) {
+    return null;
+  }
+  
+  const { theme, toggleTheme } = themeContext;
 
   return (
     <button

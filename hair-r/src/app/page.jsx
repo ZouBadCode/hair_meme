@@ -15,7 +15,7 @@ export default function Land() {
       setProgress(prevProgress => {
         // 緩慢增加到90%，最後一步完成時直接到100%
         if (prevProgress < 90) {
-          return prevProgress + (Math.random() * 4);
+          return prevProgress + (Math.random() * 5);
         }
         return prevProgress;
       });
@@ -24,7 +24,7 @@ export default function Land() {
     // 模擬載入完成
     const timer = setTimeout(() => {
       setProgress(100);
-      setTimeout(() => setIsLoading(false), 200); // 短暫延遲確保過渡動畫完成
+      setTimeout(() => setIsLoading(false), 150); // 短暫延遲確保過渡動畫完成
     }, 1500);
     
     return () => {
@@ -117,7 +117,7 @@ export default function Land() {
                   <p className="text-xl">HAIR FOR YOUR CHARMING HEAD</p>
                 </div>
               </div>
-              <p className="text-lg">轉變你的形象，從普通禿頭變身獅子王！$HAIR不只是一個代幣，它是你頭上的自信！</p>
+              <p className="text-lg">Grow Your $HAIR, While $HAIR's MarketCap Grow</p>
             </div>
             
             {/* 卡片2 */}
