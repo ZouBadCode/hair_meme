@@ -13,26 +13,26 @@ const NftPage = () => {
         { 
             emoji: "👨‍🦲", 
             name: "BALD",
-            description: "初始階段，光頭狀態。每個偉大的$HAIR之旅都始於此。",
-            rarity: "Common"
+            description: "光滑而孤獨的頭頂",
+            rarity: "Base"
         },
         { 
             emoji: "👨", 
             name: "GROWING",
-            description: "頭髮開始生長，這是希望的開始！",
-            rarity: "Uncommon"
+            description: "用水澆灌(mint)出的美好狀態",
+            rarity: "Stage 1"
         },
         { 
             emoji: "🧔", 
             name: "THICK",
-            description: "豐厚的頭髮，感受自信回歸的力量！",
-            rarity: "Rare"
+            description: "和 $HAIR 一起飛上天際",
+            rarity: "Stage 2"
         },
         { 
             emoji: "🦁", 
             name: "MAJESTIC",
-            description: "最終形態，獅子鬃毛般的豐盛秀髮，無人能及！",
-            rarity: "Legendary"
+            description: "來自天外之力的成長，需要某些神奇的力量…？",
+            rarity: "???"
         },
     ];
 
@@ -167,15 +167,15 @@ const NftPage = () => {
                         
                         {/* 右側：NFT特點 */}
                         <div className="bg-gray-800 bg-opacity-60 rounded-2xl border-2 border-purple-500 p-6 order-3">
-                            <h2 className="text-2xl font-bold mb-6 text-center">NFT Benefits</h2>
+                            <h2 className="text-2xl font-bold mb-6 text-center">Perks</h2>
                             
                             <div className="space-y-6">
                                 <div className="bg-gray-700 rounded-xl p-4">
                                     <div className="flex items-center mb-3">
                                         <span className="text-3xl mr-3">🔄</span>
-                                        <h3 className="font-bold text-xl">動態升級</h3>
+                                        <h3 className="font-bold text-xl">動態成長</h3>
                                     </div>
-                                    <p>隨著$HAIR價格上漲，你的NFT會自動進化到下一個階段！</p>
+                                    <p>HAIR 的長度與 $HAIR 將會緊密綁定，讓你的頭皮健康 to the MOON!</p>
                                 </div>
                                 
                                 <div className="bg-gray-700 rounded-xl p-4">
@@ -183,15 +183,15 @@ const NftPage = () => {
                                         <span className="text-3xl mr-3">🎁</span>
                                         <h3 className="font-bold text-xl">獨家空投</h3>
                                     </div>
-                                    <p>持有者將獲得未來$HAIR生態系統中的獨家空投和獎勵！</p>
+                                    <p>持有 HEAD 就有收到生態系空「頭」的機會！</p>
                                 </div>
                                 
                                 <div className="bg-gray-700 rounded-xl p-4">
                                     <div className="flex items-center mb-3">
                                         <span className="text-3xl mr-3">🏆</span>
-                                        <h3 className="font-bold text-xl">社區地位</h3>
+                                        <h3 className="font-bold text-xl">標誌秀髮</h3>
                                     </div>
-                                    <p>更稀有的NFT讓你在$HAIR社區中擁有更高的發言權和特權！</p>
+                                    <p>長出搶眼的 HAIR 顏色，讓你萬眾矚目</p>
                                 </div>
                             </div>
                         </div>
@@ -208,7 +208,7 @@ const NftPage = () => {
                         </button>
                         
                         <p className="mt-6 text-gray-400">
-                            Limited edition: Only 3,333 unique $HAIR NFTs will ever exist
+                            Limited： Each stage of stage will create a new style of HAIR.
                         </p>
                     </div>
                 </div>

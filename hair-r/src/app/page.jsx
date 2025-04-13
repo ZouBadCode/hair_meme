@@ -164,11 +164,6 @@ export default function Land() {
                   <p>Stake $HAIR</p>
                 </div>
                 <div className="text-center pulse-grow">
-                  <span className="text-5xl block mb-4">🎮</span>
-                  <p className="font-bold">遊戲</p>
-                  <p>Play Games</p>
-                </div>
-                <div className="text-center pulse-grow">
                   <span className="text-5xl block mb-4">🎁</span>
                   <p className="font-bold">獎勵</p>
                   <p>Get Rewards</p>
