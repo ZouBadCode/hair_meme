@@ -1,7 +1,7 @@
 
 // /components/dashboard/CategorySelector.jsx
 import React from 'react';
-import useUserStore from '../store/userStore';
+import useUserStore from './store/userStore';
 
 const CategorySelector = () => {
   const { selectedCategory, selectCategory } = useUserStore(state => ({

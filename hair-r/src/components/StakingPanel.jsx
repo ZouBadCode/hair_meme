@@ -2,7 +2,7 @@
 // /components/dashboard/StakingPanel.jsx
 import React from 'react';
 import { PiggyBank, Coins } from 'lucide-react';
-import useUserStore from '../store/userStore';
+import useUserStore from './store/userStore';
 
 const StakingPanel = () => {
   const { 

@@ -1,6 +1,6 @@
 // /components/dashboard/NFTGrid.jsx
 import React from 'react';
-import useUserStore from '../store/userStore';
+import useUserStore from './store/userStore';
 
 const NFTGrid = () => {
   const { nfts, selectedCategory, selectedNFT, selectNFT } = useUserStore(state => ({

@@ -1,6 +1,6 @@
 // /components/dashboard/ParticleEffect.jsx
 import React, { useEffect } from 'react';
-import useParticleStore from '../store/particleStore';
+import useParticleStore from './store/particleStore';
 
 const ParticleEffect = () => {
   const { particles, generateParticles, updateParticles } = useParticleStore();

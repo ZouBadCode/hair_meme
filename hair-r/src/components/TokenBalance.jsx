@@ -1,6 +1,6 @@
 // /components/dashboard/TokenBalance.jsx
 import React from 'react';
-import useUserStore from '../store/userStore';
+import useUserStore from './store/userStore';
 
 const TokenBalance = () => {
   const { hairTokens, staked } = useUserStore(state => ({
