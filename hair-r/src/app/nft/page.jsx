@@ -4,7 +4,9 @@ import NavThing from "@/components/navThing";
 import Footer from "@/components/Footer"; // 引入頁尾組件
 import NftFrame from '../../components/nftFrame';
 import "../glowAnimation.css";
-import FrameAtom from "@/components/3ds/3dFrameatom";
+import NftShow from "@/components/nftShow"; // 引入3D模型展示組件
+
+
 const NftPage = () => {
     const [selectedNft, setSelectedNft] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
@@ -215,34 +217,7 @@ const NftPage = () => {
                     </div>
 x
                     {/* 3D Models Grid */}
-                    <div className="w-full py-16 bg-gray-900">
-                        <div className="max-w-7xl mx-auto px-4">
-                            <h2 className="text-3xl font-bold mb-8 text-center text-white">Our 3D Hair Collection</h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                                {Array.from({ length: 16 }).map((_, index) => {
-                                    const modelPath = `example/${index + 1}.glb`;
-                                    // You can add a file check here if needed
-                                    return (
-                                        <div key={index} className="bg-gray-800 rounded-lg overflow-hidden aspect-square">
-                                            <div className="w-full h-full relative">
-                                                <FrameAtom 
-                                                    modelPath={modelPath} 
-                                                    fallback={
-                                                        <div className="w-full h-full flex items-center justify-center">
-                                                            <p className="text-gray-400">Model not available</p>
-                                                        </div>
-                                                    }
-                                                />
-                                                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2">
-                                                    <p className="text-center text-white">Hair #{index + 1}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
-                    </div>
+                    <NftShow />
                     {/* 添加頁尾 */}
             <Footer />
         </div>

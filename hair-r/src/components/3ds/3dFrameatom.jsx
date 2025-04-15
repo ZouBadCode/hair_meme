@@ -1,3 +1,5 @@
+"use client";
+
 import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
@@ -24,7 +26,7 @@ const FrameAtom = ({ modelPath }) => {
     return (
         <div style={{ width: '100%', height: '100%' }}>
             <Canvas
-                camera={{ position: [50, 50, 5], fov: 45 }}
+                camera={{ position: [33, 33, 5], fov: 45 }}
                 style={{ width: '100%', height: '100%' }}
             >
                 <ambientLight intensity={0.3} />
