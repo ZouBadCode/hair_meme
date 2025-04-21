@@ -4,6 +4,7 @@ import NavThing from "@/components/navThing";
 import Footer from "@/components/Footer";
 import "../glowAnimation.css";
 import FrameAtom from "@/components/3ds/3dFrameatom";
+import GrassTest from "@/components/3ds/grassTest";
 import StakePanel from "@/components/staker";
 export default function DashboardPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -284,7 +285,8 @@ export default function DashboardPage() {
                       }`}
                     >
                       <div className="w-64 h-64 md:w-80 md:h-80 flex items-center justify-center bg-gradient-to-r from-pink-500 to-purple-600 rounded-full mb-6 border-4 border-yellow-300 shadow-lg">
-                        <FrameAtom modelPath="./example/1.glb" />
+                        {/* <FrameAtom modelPath="./example/1.glb" /> */}
+                        <GrassTest />
                       </div>
 
                       <h2 className="text-3xl font-bold mb-2 text-yellow-300">
