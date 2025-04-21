@@ -68,9 +68,9 @@ const NavThing = () => {
         {/* 工具按鈕區域 */}
         <div className="flex items-center space-x-4">
           {/* 主題切換按鈕 */}
-          <div className="relative group">
+          {/* <div className="relative group">
             {themeContext ? <ThemeToggle /> : null}
-          </div>
+          </div> */}
 
           {/* 連接錢包按鈕 */}
           <div className="relative group">

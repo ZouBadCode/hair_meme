@@ -4,7 +4,7 @@ import NavThing from "@/components/navThing";
 import Footer from "@/components/Footer";
 import "../glowAnimation.css";
 import FrameAtom from "@/components/3ds/3dFrameatom";
-
+import StakePanel from "@/components/staker";
 export default function DashboardPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
@@ -196,7 +196,7 @@ export default function DashboardPage() {
           {/* Statistics cards section */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
             <div className="bg-gray-800 bg-opacity-60 rounded-xl p-6 border-2 border-pink-500">
-              <h3 className="text-gray-300 mb-2">Total Staked</h3>
+              <h3 className="text-gray-300 mb-2">HEADs in Wallet:</h3>
               <div className="flex items-center">
                 <span className="text-3xl mr-3">🔒</span>
                 <span className="text-4xl font-bold">{stats.totalStaked}</span>
@@ -204,7 +204,7 @@ export default function DashboardPage() {
             </div>
 
             <div className="bg-gray-800 bg-opacity-60 rounded-xl p-6 border-2 border-blue-500">
-              <h3 className="text-gray-300 mb-2">Total Growth Index</h3>
+              <h3 className="text-gray-300 mb-2">Hairs in Wallet:</h3>
               <div className="flex items-center">
                 <span className="text-3xl mr-3">📈</span>
                 <span className="text-4xl font-bold">
@@ -214,13 +214,13 @@ export default function DashboardPage() {
             </div>
 
             <div className="bg-gray-800 bg-opacity-60 rounded-xl p-6 border-2 border-yellow-400">
-              <h3 className="text-gray-300 mb-2">Estimated Rewards</h3>
+              <h3 className="text-gray-300 mb-2">Current Perk Level</h3>
               <div className="flex items-center">
-                <span className="text-3xl mr-3">💰</span>
+                <span className="text-xl mr-2 text-yellow-300">Level</span>
                 <span className="text-4xl font-bold">
                   {stats.estimatedRewards}
                 </span>
-                <span className="text-xl ml-2 text-yellow-300">$HAIR</span>
+
               </div>
             </div>
 
@@ -324,66 +324,7 @@ export default function DashboardPage() {
             </div>
 
             {/* 下方：Staking Rewards */}
-            <div className="bg-gray-800 bg-opacity-60 rounded-2xl border-2 border-purple-500 p-6">
-              <h2 className="text-2xl font-bold mb-6 text-center">
-                Staking Rewards
-              </h2>
-
-              <div className="mb-8">
-                <div className="flex justify-between mb-2">
-                  <span>Total Accumulated Rewards</span>
-                  <span className="font-bold text-yellow-300">320 $HAIR</span>
-                </div>
-                <div className="w-full bg-gray-700 h-4 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-yellow-300 to-green-500"
-                    style={{ width: "65%" }}
-                  ></div>
-                </div>
-                <div className="flex justify-between text-xs mt-1">
-                  <span>0</span>
-                  <span>Next level requires: 500</span>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-gray-700 rounded-xl p-4">
-                  <div className="flex items-center mb-3">
-                    <span className="text-3xl mr-3">🔄</span>
-                    <h3 className="font-bold text-xl">Daily Rewards</h3>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Estimated today's earnings</span>
-                    <span className="font-bold text-green-400">+12 $HAIR</span>
-                  </div>
-                </div>
-
-                <div className="bg-gray-700 rounded-xl p-4">
-                  <div className="flex items-center mb-3">
-                    <span className="text-3xl mr-3">🎁</span>
-                    <h3 className="font-bold text-xl">Special Rewards</h3>
-                  </div>
-                  <p>
-                    The longer you stake, the higher chance of special drops!
-                  </p>
-                  <div className="mt-2 text-center">
-                    <span className="inline-block px-3 py-1 bg-purple-600 rounded-full text-sm">
-                      Next special reward: in 3 days
-                    </span>
-                  </div>
-                </div>
-
-                <div className="bg-gray-700 rounded-xl p-4">
-                  <div className="flex items-center mb-3">
-                    <span className="text-3xl mr-3">🏆</span>
-                    <h3 className="font-bold text-xl">Claim Rewards</h3>
-                  </div>
-                  <button className="w-full meme-button">
-                    <span className="mr-2">💰</span> Harvest All Rewards
-                  </button>
-                </div>
-              </div>
-            </div>
+            <StakePanel />
           </div>
         </div>
       </div>

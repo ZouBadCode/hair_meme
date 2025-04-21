@@ -35,7 +35,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className={`relative overflow-hidden py-12 ${
+    <footer className={`relative overflow-hidden py-6 ${
       theme === 'dark' 
         ? 'bg-gradient-to-r from-gray-900 to-purple-900' 
         : 'bg-gradient-to-r from-purple-900 to-pink-600'
@@ -60,48 +60,10 @@ const Footer = () => {
       
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Logo 和描述區 */}
-          <div className="flex flex-col items-center md:items-start">
-            <div className="flex items-center space-x-2 mb-4">
-              <img 
-                src="/assets/hair.png" 
-                alt="$HAIR Logo" 
-                className="w-12 h-12 animate-pulse" 
-              />
-              <span className="text-3xl font-bold bg-gradient-to-r from-yellow-300 to-pink-500 text-transparent bg-clip-text">
-                $HAIR
-              </span>
-            </div>
-            <p className="text-center md:text-left text-gray-200 max-w-md">
-              $HAIR - 拯救你的秀髮！告別禿頭！一個充滿趣味的加密貨幣項目，讓你的錢包和頭髮一同成長！
-            </p>
-          </div>
-          
-          {/* 快速鏈接區 */}
-          <div className="flex flex-col items-center">
-            <h3 className="text-xl font-bold mb-4 border-b-2 border-yellow-300 pb-2">
-              快速鏈接
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="/" className="hover:text-yellow-300 transition-colors duration-300">首頁</a>
-              </li>
-              <li>
-                <a href="/nft" className="hover:text-yellow-300 transition-colors duration-300">NFT</a>
-              </li>
-              <li>
-                <a href="/hairpaper" className="hover:text-yellow-300 transition-colors duration-300">Hair Paper</a>
-              </li>
-              <li>
-                <a href="/dashboard" className="hover:text-yellow-300 transition-colors duration-300">儀表板</a>
-              </li>
-            </ul>
-          </div>
-          
           {/* 社交媒體按鈕區 */}
           <div className="flex flex-col items-center md:items-end">
             <h3 className="text-xl font-bold mb-4 border-b-2 border-yellow-300 pb-2">
-              社區連結
+              Links
             </h3>
             <div className="flex space-x-4 mt-2">
               {socialLinks.map((social, index) => (
@@ -132,11 +94,8 @@ const Footer = () => {
         {/* 底部口號 */}
         <div className="text-center pt-8 border-t border-white border-opacity-20">
           <h2 className="text-2xl font-bold mb-2 wiggle">
-            💪 Together Strong! 一起對抗掉髮！ 💪
+            💪 HEADs UP, Grow High! 💪
           </h2>
-          <p className="text-sm text-gray-300">
-            © {new Date().getFullYear()} $HAIR. 所有權利未保留，因為我們是開源的！
-          </p>
         </div>
       </div>
     </footer>
