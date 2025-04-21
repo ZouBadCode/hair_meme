@@ -13,6 +13,7 @@ import { ThemeProvider } from "../components/ThemeContext";
 const { networkConfig } = createNetworkConfig({
   localnet: { url: getFullnodeUrl("localnet") },
   mainnet: { url: getFullnodeUrl("mainnet") },
+  testnet: { url: getFullnodeUrl("testnet") },
 });
 
 const queryClient = new QueryClient();
@@ -22,8 +23,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <ThemeProvider>
       <Theme appearance="dark">
         <QueryClientProvider client={queryClient}>
-          <SuiClientProvider networks={networkConfig} defaultNetwork="localnet">
-            <WalletProvider>
+          <SuiClientProvider networks={networkConfig} defaultNetwork="testnet">
+            <WalletProvider autoConnect >
               {children}
             </WalletProvider>
           </SuiClientProvider>

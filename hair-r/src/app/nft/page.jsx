@@ -175,25 +175,25 @@ const NftPage = () => {
                                 <div className="bg-gray-700 rounded-xl p-4">
                                     <div className="flex items-center mb-3">
                                         <span className="text-3xl mr-3">🔄</span>
-                                        <h3 className="font-bold text-xl">動態成長</h3>
+                                        <h3 className="font-bold text-xl">Dynamic NFTs</h3>
                                     </div>
-                                    <p>HAIR 的長度與 $HAIR 將會緊密綁定，讓你的頭皮健康 to the MOON!</p>
+                                    <p>The length of hair is tied to the price of $HAIR, so take it to the MOON!</p>
                                 </div>
                                 
                                 <div className="bg-gray-700 rounded-xl p-4">
                                     <div className="flex items-center mb-3">
                                         <span className="text-3xl mr-3">🎁</span>
-                                        <h3 className="font-bold text-xl">獨家空投</h3>
+                                        <h3 className="font-bold text-xl">(H)AIRROPs</h3>
                                     </div>
-                                    <p>持有 HEAD 就有收到生態系空「頭」的機會！</p>
+                                    <p>With any Blank head comes chances of HAIRDROP!</p>
                                 </div>
                                 
                                 <div className="bg-gray-700 rounded-xl p-4">
                                     <div className="flex items-center mb-3">
                                         <span className="text-3xl mr-3">🏆</span>
-                                        <h3 className="font-bold text-xl">標誌秀髮</h3>
+                                        <h3 className="font-bold text-xl">Decorate yourself</h3>
                                     </div>
-                                    <p>長出搶眼的 HAIR 顏色，讓你萬眾矚目</p>
+                                    <p>Use HAIR as your On-Chain Profile.</p>
                                 </div>
                             </div>
                         </div>

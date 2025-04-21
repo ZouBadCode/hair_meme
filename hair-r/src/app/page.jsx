@@ -129,27 +129,12 @@ export default function Land() {
             
             {/* 卡片2 */}
             <div className="meme-card bg-pink-100 p-8">
-              <h3 className="text-2xl font-bold mb-4">Hair Growth Stages</h3>
+              <h3 className="text-2xl font-bold mb-4">NFT Collections</h3>
               <div className="flex justify-between text-center">
                 <div className="flex flex-col items-center">
                   <span className="text-4xl mb-2">👨‍🦲</span>
-                  <p>Stage 1</p>
-                  <p className="text-sm">Bald</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="text-4xl mb-2">👨</span>
-                  <p>Stage 2</p>
-                  <p className="text-sm">Growing</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="text-4xl mb-2">🧔</span>
-                  <p>Stage 3</p>
-                  <p className="text-sm">Thick</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="text-4xl mb-2">🦁</span>
-                  <p>Stage 4</p>
-                  <p className="text-sm">Majestic</p>
+                  <p>HEAD</p>
+                  <p className="text-sm">The Base model</p>
                 </div>
               </div>
             </div>

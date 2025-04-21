@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import ConnetWalletBtn from './connetWalletBTN';
+import { ConnectButton } from '@mysten/dapp-kit';
 import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
 import { useTheme } from './ThemeContext';
@@ -76,7 +76,7 @@ const NavThing = () => {
           <div className="relative group">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-300"></div>
             <div className="relative">
-              <ConnetWalletBtn />
+              <ConnectButton />
             </div>
           </div>
         </div>
